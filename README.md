@@ -1,37 +1,97 @@
-# 오늘 할 일 Cross — 미리보기 버전 2.0.1
+# 오늘 할 일 Cross
 
-Windows·macOS·Linux용 Avalonia 기반 버전입니다. 기존 Windows 전용 앱과 별도로 실행하고 저장합니다.
+바탕화면 한쪽에 위젯처럼 띄워 두고 오늘 해야 할 일을 간단히 관리하는 데스크톱 앱입니다. Windows, macOS, Linux에서 실행할 수 있도록 [.NET 8](https://dotnet.microsoft.com/)과 [Avalonia UI](https://avaloniaui.net/)로 만들었습니다.
 
-## 파일 선택 및 실행
+현재 버전: **2.0.2**
 
-- Windows 64비트: `TodoWidgetCross-Windows-x64.zip`을 전부 풀고 `TodoWidgetCross.exe`를 실행합니다. EXE만 따로 옮기지 마세요.
-- Apple Silicon Mac(M1/M2/M3/M4 등): `TodoWidgetCross-macOS-arm64.tar.gz`를 풀고 `TodoWidget Cross.app`을 사용합니다.
-- Intel Mac: `TodoWidgetCross-macOS-x64.tar.gz`를 사용합니다.
-- Linux 64비트 Intel/AMD: `TodoWidgetCross-Linux-x64.tar.gz`를 풀고 `TodoWidgetCross`를 실행합니다. 터미널에서는 압축을 푼 폴더에서 `./TodoWidgetCross`를 실행합니다.
+## 주요 기능
 
-.NET 런타임은 각 배포본에 포함되어 있습니다. Linux는 X11 또는 XWayland, 시스템 글꼴/fontconfig 등 데스크톱 라이브러리가 필요합니다. 한글 글꼴이 없는 Linux에서는 한글 글꼴을 설치해야 합니다. GNOME 등 알림 영역이 없는 환경에서도 접근할 수 있도록 Linux에서는 작업 표시줄에도 창이 표시됩니다.
+- 컴퓨터 로그인 시 자동 실행
+- 할 일 추가, 완료 체크, 내용 수정
+- 삭제한 항목을 휴지통에서 복원하거나 확인 후 완전히 비우기
+- 창 이동 및 크기 조절
+- 불투명도와 모서리 둥글기 조절
+- 항상 위에 표시
+- 연·월·일·요일 표시
+- 목록, 창 위치, 크기와 화면 설정 자동 저장
+- 사용자가 저장 폴더를 직접 지정
+- 알림 영역 아이콘에서 위젯 다시 열기
 
-## 사용
+## 실행 방법
 
-- 입력란에 쓰고 Enter 또는 +: 할 일 추가
-- 체크: 완료/미완료
-- 연필: 수정, Enter 저장, Esc 취소
-- 삭제 아이콘: 휴지통 이동
-- 휴지통: 복원 또는 비우기. 비우기는 확인 창에서 확인을 눌러야 삭제됩니다.
-- 제목줄 드래그: 이동. 창 테두리/모서리 드래그: 크기 조절. 위치와 크기는 종료할 때 저장합니다.
-- ☰ → 화면·실행 설정: 불투명도, 모서리 둥글기, 항상 위, 로그인 자동 실행
-- ×: 종료. 알림 영역 아이콘을 클릭하면 창을 앞으로 가져옵니다.
+### Windows 64비트
 
-새 버전의 자동 실행은 처음에는 꺼져 있습니다. 새 버전으로 교체할 때는 기존 앱 설정에서 자동 실행을 끄고, 새 앱 설정에서 켜세요. 그렇지 않으면 로그인 때 두 앱이 함께 실행될 수 있습니다. 자동 실행을 켠 후 앱을 옮겼다면 새 위치에서 설정을 껐다 켜세요.
+1. `TodoWidgetCross-Windows-x64.zip`을 내려받습니다.
+2. 압축을 전부 풉니다.
+3. 폴더 안의 `TodoWidgetCross.exe`를 실행합니다.
+
+실행 파일 옆의 DLL과 런타임 파일이 필요하므로 `TodoWidgetCross.exe`만 따로 옮기면 안 됩니다. 바탕화면에는 실행 파일의 바로가기를 만들어 사용하는 것이 좋습니다.
+
+### macOS
+
+- Apple Silicon(M1, M2, M3, M4 등): `TodoWidgetCross-macOS-arm64.tar.gz`
+- Intel Mac: `TodoWidgetCross-macOS-x64.tar.gz`
+
+압축을 풀고 `TodoWidget Cross.app`을 응용 프로그램 폴더로 옮깁니다. 현재 배포본은 Apple 개발자 서명과 공증을 하지 않은 시험판이므로 처음에는 Control 클릭 후 `열기`를 선택해야 할 수 있습니다.
+
+### Linux 64비트
+
+`TodoWidgetCross-Linux-x64.tar.gz`의 압축을 푼 뒤 다음 명령으로 실행합니다.
+
+```bash
+./TodoWidgetCross
+```
+
+Linux에서는 X11 또는 XWayland, fontconfig와 시스템 글꼴 등 일반적인 데스크톱 라이브러리가 필요합니다.
+
+## 사용법
+
+- 입력란에 내용을 적고 `Enter` 또는 `+`: 할 일 추가
+- 체크박스: 완료 또는 미완료 전환
+- 연필 아이콘: 내용 수정
+- 삭제 아이콘: 휴지통으로 이동
+- 휴지통: 항목 복원 또는 전체 비우기
+- 제목줄 드래그: 창 이동
+- 테두리와 모서리 드래그: 창 크기 조절
+- 더보기 → `화면·실행 설정…`: 불투명도, 모서리, 항상 위, 자동 실행 설정
+- 더보기 → `저장 위치…`: 현재 저장 경로 확인 및 폴더 변경
+
+## 데이터 저장
+
+기본 저장 파일은 문서 폴더의 `TodoWidget Cross Data/tasks.json`입니다. 저장 위치는 앱의 더보기 메뉴에서 원하는 폴더로 변경할 수 있습니다.
+
+위치를 바꾸면 현재 목록과 설정을 새 폴더에 복사하고 기존 폴더의 파일은 백업용으로 남깁니다. 데이터 손실을 막기 위해 `tasks.json`이 이미 있는 폴더는 덮어쓰지 않습니다.
+
+처음 실행할 때 기존 Windows 버전의 `TodoWidget Data/tasks.json`이 발견되면 목록과 설정을 새 저장소로 한 번 가져옵니다. 원본 파일은 변경하지 않습니다.
 
 ## 개발
 
-소스는 `source` 폴더에 있습니다. .NET 8 SDK와 Avalonia 11.3.22를 사용합니다.
+필요한 환경:
 
-```
+- .NET 8 SDK
+- Avalonia 11.3.22
+
+소스 코드는 `source` 폴더에 있습니다.
+
+```powershell
 dotnet build source/TodoWidgetCross.csproj -c Release
+dotnet run --project source/TodoWidgetCross.csproj
 dotnet run --project source/TodoWidgetCross.csproj -- --self-test ./test-output
+```
+
+특정 운영체제용 자체 포함 빌드를 만들려면 RID를 지정합니다.
+
+```powershell
+dotnet publish source/TodoWidgetCross.csproj -c Release -r win-x64 --self-contained true
+dotnet publish source/TodoWidgetCross.csproj -c Release -r osx-arm64 --self-contained true
 dotnet publish source/TodoWidgetCross.csproj -c Release -r linux-x64 --self-contained true
 ```
 
-`source/publish.ps1`은 OS별 빌드를 생성합니다. `source/package.ps1`은 이 작업 폴더의 빌드 결과를 Unix 실행 권한이 보존된 tar.gz로 포장한 실제 패키징 스크립트입니다. macOS .app 구조, 개발자 서명/공증 정보는 [Avalonia 공식 배포 문서](https://docs.avaloniaui.net/docs/deployment/macos)를 참고하세요. Linux 의존성은 [공식 Linux 배포 문서](https://docs.avaloniaui.net/docs/deployment/linux)에 안내되어 있습니다.
+`source/publish.ps1`은 지원 운영체제별 빌드를 만들고, `source/package.ps1`은 Windows ZIP과 macOS·Linux tar.gz 배포 파일을 생성합니다.
+
+## 검증 범위
+
+Windows에서는 실제 화면 실행, 한글 입력과 수정, 저장, 창 크기 조절과 설정 복원을 확인했습니다. macOS와 Linux 배포본은 교차 빌드 및 패키지 구조를 검사했지만 실제 기기에서의 자동 실행과 알림 영역 동작은 추가 확인이 필요합니다.
+
+더 자세한 설치 및 데이터 이전 방법은 [사용법](사용법.md), 검사 내용은 [검증 결과](검증결과.md)에서 확인할 수 있습니다.
+
