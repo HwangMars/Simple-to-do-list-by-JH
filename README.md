@@ -2,7 +2,16 @@
 
 바탕화면 한쪽에 위젯처럼 띄워 두고 오늘 해야 할 일을 간단히 관리하는 데스크톱 앱입니다. Windows, macOS, Linux에서 실행할 수 있도록 [.NET 8](https://dotnet.microsoft.com/)과 [Avalonia UI](https://avaloniaui.net/)로 만들었습니다.
 
-현재 버전: **2.3.0**
+현재 버전: **2.4.0**
+
+## 개발 정보
+
+- 개발자: 황정윤
+- 소속: 건국대학교 건축환경 및 에너지 연구실
+- 이메일: tkwkrkswl@gmail.com
+- 라이선스: [MIT License + Commons Clause](LICENSE)
+
+회사와 기관을 포함해 누구나 무료로 사용하고 수정·공유할 수 있습니다. 프로그램 자체 또는 기능의 가치가 대부분 이 프로그램에서 나오는 제품·서비스를 유료로 판매하는 것은 허용하지 않습니다. 이 조건으로 인해 OSI가 정의하는 오픈소스 라이선스는 아니며, 소스 공개형 라이선스입니다.
 
 ## 주요 기능
 
@@ -21,6 +30,7 @@
 - 사용자가 저장 폴더를 직접 지정
 - 알림 영역 아이콘에서 위젯 다시 열기
 - GitHub Release를 확인해 새 버전 알림 표시
+- 더보기 메뉴에서 버전, 개발자, 소속, 이메일과 라이선스 확인
 
 ## 실행 방법
 
@@ -78,7 +88,7 @@ Linux에서는 X11 또는 XWayland, fontconfig와 시스템 글꼴 등 일반적
 앱은 [`HwangMars/Simple-to-do-list-by-JH`](https://github.com/HwangMars/Simple-to-do-list-by-JH)의 최신 정식 Release를 확인합니다. 단순히 저장소에 파일을 푸시하는 것만으로는 업데이트가 표시되지 않습니다.
 
 1. GitHub 저장소의 `Releases`에서 새 Release를 만듭니다.
-2. 태그를 `v2.3.0`처럼 앱 버전에 맞춥니다.
+2. 태그를 `v2.4.0`처럼 앱 버전에 맞춥니다.
 3. Windows ZIP과 필요한 운영체제별 파일을 Release 자산으로 첨부합니다.
 4. 초안이나 사전 출시가 아닌 정식 Release로 게시합니다.
 
