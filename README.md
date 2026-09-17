@@ -2,7 +2,7 @@
 
 바탕화면 한쪽에 위젯처럼 띄워 두고 오늘 해야 할 일을 간단히 관리하는 데스크톱 앱입니다. Windows, macOS, Linux에서 실행할 수 있도록 [.NET 8](https://dotnet.microsoft.com/)과 [Avalonia UI](https://avaloniaui.net/)로 만들었습니다.
 
-현재 버전: **2.4.0**
+현재 버전: **2.7.4**
 
 ## 개발 정보
 
@@ -31,6 +31,9 @@
 - 알림 영역 아이콘에서 위젯 다시 열기
 - GitHub Release를 확인해 새 버전 알림 표시
 - 더보기 메뉴에서 버전, 개발자, 소속, 이메일과 라이선스 확인
+- 입력창 바로 위에서 통통 뛰어 걷고, 웃음·울음·놀람·졸림 표정에 맞춰 자동으로 말하는 비공식 팬아트 스핔이
+- 스핔이를 누르면 부드럽게 납작해지며 엎드리고, 약 3초 뒤 자연스럽게 다시 일어나 걷기
+- 설정에서 스핔이 표시 여부 선택
 
 ## 실행 방법
 
@@ -88,7 +91,11 @@ Linux에서는 X11 또는 XWayland, fontconfig와 시스템 글꼴 등 일반적
 앱은 [`HwangMars/Simple-to-do-list-by-JH`](https://github.com/HwangMars/Simple-to-do-list-by-JH)의 최신 정식 Release를 확인합니다. 단순히 저장소에 파일을 푸시하는 것만으로는 업데이트가 표시되지 않습니다.
 
 1. GitHub 저장소의 `Releases`에서 새 Release를 만듭니다.
-2. 태그를 `v2.4.0`처럼 앱 버전에 맞춥니다.
+2. 태그를 `v2.7.4`처럼 앱 버전에 맞춥니다.
+
+## 팬 콘텐츠 안내
+
+앱에 포함된 `Assets/speaki-*.png`는 트릭컬 리바이브의 스피키/스핔이에서 영감을 받아 새로 제작한 비공식 비영리 팬아트입니다. 게임 원본 이미지를 복제한 리소스가 아니며, 트릭컬 리바이브와 관련 IP의 권리는 에피드게임즈에 있습니다. 자세한 내용은 [팬 콘텐츠 안내](docs/FAN-CONTENT-NOTICE.md)를 확인하세요.
 3. Windows ZIP과 필요한 운영체제별 파일을 Release 자산으로 첨부합니다.
 4. 초안이나 사전 출시가 아닌 정식 Release로 게시합니다.
 
@@ -117,9 +124,9 @@ dotnet publish source/TodoWidgetCross.csproj -c Release -r osx-arm64 --self-cont
 dotnet publish source/TodoWidgetCross.csproj -c Release -r linux-x64 --self-contained true
 ```
 
-`source/publish.ps1`은 지원 운영체제별 빌드를 만들고, `source/package.ps1`은 Windows ZIP과 macOS·Linux tar.gz 배포 파일을 생성합니다.
+`source/publish.ps1`은 지원 운영체제별 빌드를 만들고, `source/package.ps1`은 `dist` 폴더에 Windows ZIP과 macOS·Linux tar.gz 배포 파일을 생성합니다.
 
-`source/installer.iss`는 Inno Setup으로 Windows 설치 EXE를 생성합니다. `package.ps1 -Iscc "C:\\경로\\ISCC.exe"`처럼 컴파일러 경로를 넘기면 다른 배포 파일과 함께 설치 EXE도 만듭니다. 설치 프로그램은 현재 서명되지 않았으며 인증서를 사용자 컴퓨터의 신뢰 저장소에 추가하지 않습니다.
+`source/installer.iss`는 Inno Setup으로 `dist` 폴더에 Windows 설치 EXE를 생성합니다. `package.ps1 -Iscc "C:\\경로\\ISCC.exe"`처럼 컴파일러 경로를 넘기면 다른 배포 파일과 함께 설치 EXE도 만듭니다. 설치 프로그램은 현재 서명되지 않았으며 인증서를 사용자 컴퓨터의 신뢰 저장소에 추가하지 않습니다.
 
 ## 검증 범위
 
